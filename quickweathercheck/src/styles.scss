@@ -3,8 +3,8 @@
     --blue-1: rgb(119, 119, 206);
     --blue-2: rgb(61, 61, 230);
     --white:#fff;
-    --grey-1:grey;
-    --shadow-dark: #000;
+    --grey-1:#fff;
+   //--shadow-dark: #fff;
     --yellow-1:yellow;
     --shadow-light: rgb(142, 108, 98);
 
@@ -137,15 +137,16 @@ body{
   .search {
     margin-bottom: 1em;
     text-align: center;
+    color: #fff;
   }
   
   .search input {
-    background-color: var(--shadow-light);
+    //background-color: var(--shadow-light);
     outline: none;
     border: none;
     border-radius: 20px;
     padding: 1em;
-    color: var(--grey-1);
+    color: red;
     font-size: 0.8em;
     text-align: center;
   }

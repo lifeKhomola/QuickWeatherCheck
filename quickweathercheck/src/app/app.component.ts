@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WeatherData } from './models/weather.model';
+import { WeatherData } from './Models/weather.model'
 import { WeatherService } from './services/weather.service';
 
 @Component({
@@ -14,11 +14,16 @@ export class AppComponent {
   }
 
   cityName: string = 'Wellington';
-  weatherData?: WeatherData;
+  Data?: WeatherData;
+  weatherData:any;
+ 
 
   ngOnInit(): void {
   this.getWeatherData(this.cityName);
   this.cityName = '';
+  console.log("oky")
+ 
+ 
   }
 
   onSubmit() {
@@ -29,9 +34,11 @@ export class AppComponent {
   private getWeatherData(cityName: string) {
   this.weatherService.getWeatherData(cityName)
   .subscribe({
-      next: (response) => {
-      this.weatherData = response;
-      console.log(response);
+      next: (response:any) => {
+      this.Data = response;
+      console.log("res",this.Data = response);
+      this.weatherData = this.Data;
+      console.log("html", this.weatherData);
       }
   });
   }
