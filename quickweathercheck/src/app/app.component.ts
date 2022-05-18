@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WeatherData } from './models/weather.model';
+import { WeatherService } from './services/weather.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'quickweathercheck';
+  constructor(private weatherService: WeatherService) {
+
+  }
+
+  cityName: string = 'Wellington';
+  weatherData?: WeatherData;
+
+  ngOnInit(): void {
+  this.getWeatherData(this.cityName);
+  this.cityName = '';
+  }
+
+  onSubmit() {
+  this.getWeatherData(this.cityName);
+  this.cityName = '';
+  }
+
+  private getWeatherData(cityName: string) {
+  this.weatherService.getWeatherData(cityName)
+  .subscribe({
+      next: (response) => {
+      this.weatherData = response;
+      console.log(response);
+      }
+  });
+  }
 }
