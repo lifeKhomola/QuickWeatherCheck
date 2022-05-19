@@ -19,9 +19,9 @@ export class AppComponent {
  
 
   ngOnInit(): void {
-  this.getWeatherData(this.cityName);
+  // this.getWeatherData(this.cityName);
   this.cityName = '';
-  console.log("oky")
+  console.log("oky") 
  
  
   }

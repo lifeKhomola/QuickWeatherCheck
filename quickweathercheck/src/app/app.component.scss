@@ -45,7 +45,7 @@ video{
     background-color:#fff;
     border-radius: 59px;
     box-shadow:0px 4px rgba(251, 133, 0, 0.99);
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
   }
   
@@ -84,14 +84,26 @@ video{
     // top: 267px;
     
     // padding: 10px;
-    border-radius: 177px;    
-    background-color:#FFB703;
+    // border-radius: 177px;    
+    // background-color:#FFB703;
+    box-sizing: border-box;
+
+    // position: absolute;
+    // width: 695px;
+    // height: 68px;
+    // left: 533px;
+    // top: 267px;
+    text-align: center;
+    color: #fff;
+    font-size:x-large;
+    background: #FFB703;
+    border-radius: 177px;
 }
 
 .center-wrapper{
     display: flex;
     flex-direction: row;
-    max-width: 100%;
+   // max-width: 100%;
 }
 
 .seacrh-wrapp {
@@ -122,6 +134,31 @@ video{
         border-radius: 177px;
     }
 }
+@media only screen and (max-width: 600px) {
+    .center-wrapper{
+        //display:block;
+       flex-direction: column;
+        // background-color:#fff;
+    }
+     
+  }
+  @media only screen and (min-width: 1223px) {
+    .search{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 695px;
+        height: 68px;
+        left: 533px;
+        top: 267px;
+        text-align: center;
+        color: #fff;
+        font-size:x-large;
+        background: #FFB703;
+        border-radius: 177px;
+    }
+     
+  }
 .image{
     padding-bottom: 15%;
     display: flex;
